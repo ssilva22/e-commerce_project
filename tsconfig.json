@@ -31,7 +31,8 @@
       "@framework/*": [
         "framework/shopify/*"
       ]
-    }
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
