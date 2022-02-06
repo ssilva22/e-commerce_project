@@ -4,7 +4,7 @@ import getAllproducts from "@framework/product/get-all-products"
 import { getConfig } from "@framework/api/config"
 import { Layout } from "@components/common"
 import { ProductCard } from "@components/product"
-import { Grid, Hero } from "@components/ui"
+import { Grid, Hero,Marquee } from "@components/ui"
 
 export async function getStaticProps() {
   const config = getConfig()
@@ -33,6 +33,15 @@ export default function Home({
       )}
       </Grid>
       <Hero headline="Cookies, ice cream and muffins" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione mollitia ab sequi accusantium aperiam. Sunt dolorem cum quod id odit sed mollitia nesciunt animi, nemo itaque accusantium aperiam numquam alias."/>
+      <Marquee>
+         { products.slice(0,3).map(product =>
+          <ProductCard
+            key={product.id}
+            variant="slim"
+            product={product}
+          />
+      )}
+      </Marquee>
     </>
   )
 }
