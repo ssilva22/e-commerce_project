@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-css": "postcss assets/main.css -o assets/main_browser.css"
   },
   "dependencies": {
     "body-scroll-lock": "3.1.5",

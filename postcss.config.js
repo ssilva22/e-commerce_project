@@ -1,11 +1,8 @@
 module.exports = {
-  plugins: ["tailwindcss", "postcss-nesting", "autoprefixer"],
+  plugins: ["tailwindcss", "autoprefixer", "postcss-nesting"],
 }
 
 // just for testing!
 // module.exports = {
-//   plugins: [
-//     require("tailwindcss"),
-//     require("autoprefixer")
-//   ]
+//   plugins: [require("tailwindcss"), require("autoprefixer")],
 // }
