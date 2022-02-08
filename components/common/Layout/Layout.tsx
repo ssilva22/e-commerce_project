@@ -14,7 +14,7 @@ const Layout: FC = ({children}) => {
       onClose={closeSidebar}
       isOpen={isSidebarOpen}
       >
-        <CartSidebar />
+        <CartSidebar  />
       </Sidebar>
       <main className="fit">
         { children }
