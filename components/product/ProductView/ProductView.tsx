@@ -6,7 +6,7 @@ import Image from "next/image"
 import { Product } from '@common/types/product'
 import { ProductSlider, Swatch } from "@components/product"
 import { Choices, getVariant } from '../helpers'
-import {useUi} from "@components/ui/context"
+import {useUI} from "@components/ui/context"
 
 
 interface Props {
@@ -15,7 +15,6 @@ interface Props {
 
 const ProductView: FC<Props> = ({ product }) => {
   const [ choices, setChoices ] = useState<Choices>({})
-  const {openSidebar} = useUi()
 
   const variant = getVariant(product, choices)
 
@@ -32,6 +31,7 @@ const ProductView: FC<Props> = ({ product }) => {
       console.log(error)
     }
   }
+    const {openSidebar} = useUI()
 
   return (
     <Container>
