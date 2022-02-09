@@ -1,5 +1,17 @@
 import { ApiFetcher, ApiFetcherOptions } from "./api"
 
+export type SWRHookContext<Input,Output> = {
+  useData: (input:Input) => Promise<Output>
+}
+
+export type SWRHook<H extends HookDescriptor = any> = {
+  fetcherOptions: HookFetcherOptions
+  fetcher: HookFetcherFn<H["fetcherInput"],H["fetcherOutput"],H["data"]>
+  useHook(
+    context: SWRHookContext<H["fetcherInput"], H["data"]>
+  ): Promise<H["data"]>
+}
+
 export interface ApiHooks {
   cart: {
     useAddItem: MutationHook
