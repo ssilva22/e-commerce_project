@@ -1,14 +1,14 @@
+
 import cn from 'classnames'
-import s from './ProductView.module.css'
 import { FC, useState } from 'react'
+import s from './ProductView.module.css'
 import { Container, Button } from '@components/ui'
 import Image from "next/image"
 import { Product } from '@common/types/product'
 import { ProductSlider, Swatch } from "@components/product"
 import { Choices, getVariant } from '../helpers'
-import {useUI} from "@components/ui/context"
+import { useUI } from '@components/ui/context'
 import useAddItem from "@framework/cart/use-add-item"
-
 
 interface Props {
   product: Product
@@ -16,23 +16,25 @@ interface Props {
 
 const ProductView: FC<Props> = ({ product }) => {
   const [ choices, setChoices ] = useState<Choices>({})
-  const variant = getVariant(product, choices)
+
+  const { openSidebar } = useUI()
   const addItem = useAddItem()
+
+  const variant = getVariant(product, choices)
 
   const addToCart = async () => {
     try {
       const item = {
         productId: String(product.id),
-        variant: variant?.id,
-        variantOptions:variant?.options
+        variantId: String(variant?.id),
+        variantOptions: variant?.options,
+        quantity: 1
       }
+
       const output = await addItem(item)
       openSidebar()
-    }catch(error){
-      console.log(error)
-    }
+    } catch {}
   }
-    const {openSidebar} = useUI()
 
   return (
     <Container>
