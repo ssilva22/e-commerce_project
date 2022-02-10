@@ -6,16 +6,16 @@ import {
   useMutationHook
 } from "@common/utils/use-hook"
 
-export type UseAddItem<
+export type UseRemoveItem<
   H extends MutationHook = MutationHook<any>
 > = ReturnType<H["useHook"]>
 
-const useAddItem: UseAddItem = () => {
+const useRemoveItem: UseRemoveItem = () => {
   const hook = useHook((hooks) => {
-    return hooks.cart.useAddItem
+    return hooks.cart.useRemoveItem
   })
 
   return useMutationHook({...hook})()
 }
 
-export default useAddItem
+export default useRemoveItem
