@@ -5,6 +5,7 @@ import { useUI } from '@components/ui/context'
 import useCart from '@framework/cart/use-cart'
 import { LineItem } from '@common/types/cart'
 import CartItem from '../CartItem'
+import { Button } from '@components/ui'
 
 const CartSidebar: FC = () => {
   const { closeSidebar} = useUI()
@@ -20,12 +21,12 @@ const CartSidebar: FC = () => {
       <header className="px-4 pt-6 pb-4 sm:px-6">
         <div className="flex items-start justify-between space-x-3">
           <div className="h-7 flex items-center">
-            <button
+            <Button
               onClick={closeSidebar}
               className="hover:text-gray-500 transition ease-in-out duration-150"
             >
               <Cross className="h-6 w-6" />
-            </button>
+            </Button>
           </div>
         </div>
       </header>
@@ -83,13 +84,12 @@ const CartSidebar: FC = () => {
               <span>{data?.totalPrice} {data?.currency.code}</span>
             </div>
           </div>
-          <button
-            onClick={() => {
-              alert("Going to checkout!")
-            }}
+          <Button
+           Component="a"
+           href="/"
           >
             Proceed to Checkout
-          </button>
+          </Button>
         </div>
       </>
       }
