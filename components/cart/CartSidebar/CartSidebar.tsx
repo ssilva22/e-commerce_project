@@ -21,12 +21,12 @@ const CartSidebar: FC = () => {
       <header className="px-4 pt-6 pb-4 sm:px-6">
         <div className="flex items-start justify-between space-x-3">
           <div className="h-7 flex items-center">
-            <Button
+            <button
               onClick={closeSidebar}
               className="hover:text-gray-500 transition ease-in-out duration-150"
             >
               <Cross className="h-6 w-6" />
-            </Button>
+            </button>
           </div>
         </div>
       </header>
@@ -57,9 +57,6 @@ const CartSidebar: FC = () => {
                 item={item}
                 currencyCode={data.currency.code}
               />
-              // <div key={item.id}>
-              //   {item.name} - {item.quantity}
-              // </div>
             )}
           </ul>
         </div>
@@ -85,8 +82,8 @@ const CartSidebar: FC = () => {
             </div>
           </div>
           <Button
-           Component="a"
-           href="/"
+            Component="a"
+            href="/api/checkout"
           >
             Proceed to Checkout
           </Button>

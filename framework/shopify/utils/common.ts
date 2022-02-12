@@ -32,8 +32,8 @@ export const checkoutDetailFragment = `
           sku
           title
           selectedOptions {
-              name
-              value
+            name
+            value
           }
           image {
             originalSrc

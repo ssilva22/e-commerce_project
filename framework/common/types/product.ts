@@ -26,8 +26,8 @@ export interface ProductVariant {
   sku: string
   image?: ProductImage
   requiresShipping: boolean
-  price:number
-  listPrice:number
+  price: number
+  listPrice: number
   options: ProductOption[]
 }
 

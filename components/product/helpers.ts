@@ -16,3 +16,4 @@ export const getVariant = (product: Product, choices: Choices) =>
          choices[optionName] === variantOption.values[0].label
     })
   )
+

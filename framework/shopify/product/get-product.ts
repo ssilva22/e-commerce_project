@@ -1,5 +1,8 @@
+
+
 import { ApiConfig, Variables } from "@common/types/api";
 import { getProductQuery, normalizeProduct } from "@framework/utils";
+
 import { Product as ShopifyProduct } from "@framework/schema"
 import { Product } from "@common/types/product"
 

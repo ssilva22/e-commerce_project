@@ -16,7 +16,7 @@ interface Props {
 
 const ProductView: FC<Props> = ({ product }) => {
   const [ choices, setChoices ] = useState<Choices>({})
-  const [isLoading, setIsLoading] = useState(false)
+  const [ isLoading, setIsLoading ] = useState(false)
 
   const { openSidebar } = useUI()
   const addItem = useAddItem()
@@ -105,7 +105,7 @@ const ProductView: FC<Props> = ({ product }) => {
               className={s.button}
               onClick={addToCart}
               isLoading={isLoading}
-              >
+            >
               Add to Cart
             </Button>
           </div>
